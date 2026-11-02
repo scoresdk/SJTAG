@@ -3,11 +3,11 @@ This contains code related to my (@AzureianGH) implementation of Sunplus' SJprob
 
 ## Where to find X
 
-`/encore/`: Utility made for reading, writing, and verifying programs sent to the flash.
-`/Example/`: Simple memory read example.
-`/SJTag/`: The main code behind most my research. Where you will find the most information.
-`/CH347/`: Support for my JTAG debugger. Feel free to add your own devices.
-`/Jtag/`: Interfaces for adding your own debugger's support.
+- `/encore/`: Utility made for reading, writing, and verifying programs sent to the flash.
+- `/Example/`: Simple memory read example.
+- `/SJTag/`: The main code behind most my research. Where you will find the most information.
+- `/CH347/`: Support for my JTAG debugger. Feel free to add your own devices.
+- `/Jtag/`: Interfaces for adding your own debugger's support.
 
 ## Notice
 This code is an amalgamation of half a year worth of tests. It's built upon itself in a way not intended to be. I never expected to get this far, and under constraint of wanting to release, do keep this in mind. The library is tested well, so report any bugs found.
