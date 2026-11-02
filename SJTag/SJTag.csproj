@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EmbedSjtagService Condition="'$(EmbedSjtagService)' == ''">true</EmbedSjtagService>
+    <SjtagServiceImage Condition="'$(SjtagServiceImage)' == '' and Exists('$(MSBuildProjectDirectory)/res/score-routine.hex8')">$(MSBuildProjectDirectory)/res/score-routine.hex8</SjtagServiceImage>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Jtag/Jtag.csproj" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(EmbedSjtagService)' == 'true' and '$(SjtagServiceImage)' != ''">
+    <EmbeddedResource Include="$(SjtagServiceImage)" LogicalName="SJTag.Score7.Service.hex8" />
+  </ItemGroup>
+  <Target Name="ValidateServiceImage" BeforeTargets="PrepareForBuild" Condition="'$(EmbedSjtagService)' == 'true' and '$(SjtagServiceImage)' != ''">
+    <Error Condition="!Exists('$(SjtagServiceImage)')" Text="SjtagServiceImage does not exist: $(SjtagServiceImage)" />
+  </Target>
+</Project>

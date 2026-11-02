@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="Jtag/Jtag.csproj" />
+  <Project Path="CH347/CH347.csproj" />
+  <Project Path="Example/Example.csproj" />
+  <Project Path="SJTag/SJTag.csproj" />
+  <Project Path="encore/encore.csproj" />
+</Solution>
